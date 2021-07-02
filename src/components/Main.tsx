@@ -1,7 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Devices } from './Devices';
 
-function App() {
-  return <h1>Mugheera</h1>;
-}
+const Main = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/alldevices" component={Devices} />
+      </Switch>
+    </Router>
+  );
+};
 
-export default App;
+export default Main;
