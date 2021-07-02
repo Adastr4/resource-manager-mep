@@ -5,9 +5,10 @@ import Layout from './Layout';
 const Main = () => {
   return (
     <Router>
-      <Layout />
       <Switch>
-        <Route exact path="/alldevices" component={Devices} />
+        <Layout>
+          <Route exact path="/alldevices" component={Devices} />
+        </Layout>
       </Switch>
     </Router>
   );
