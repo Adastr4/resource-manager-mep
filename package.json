@@ -20,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "prettier:fix": "prettier src/**/*.{js,jsx,ts,tsx,json,css,scss,md} --write",
+    "prettify": "prettier --write",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
