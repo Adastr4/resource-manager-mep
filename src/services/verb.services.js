@@ -1,12 +1,11 @@
 import axios from 'axios';
 import forEach from 'lodash.foreach';
 
-import envConsts from '../internals/env/env_constants';
+import envConsts from '../internals/env_constants';
 
 const Axios = axios.create();
 
 const api = envConsts.apiUrl;
-// const api = `https://api-test.pitchfunnel.com/api`;
 
 const createParams = (listOfParams) => {
   let array = [];
