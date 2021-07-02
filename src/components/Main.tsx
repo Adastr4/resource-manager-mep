@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Devices } from './Devices';
+import { Devices } from '../views/Devices';
 import Layout from './Layout';
 
 const Main = () => {
