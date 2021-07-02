@@ -6,11 +6,12 @@ import {
   LaptopOutlined,
   ContainerOutlined,
 } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
-const BasicLayout = () => {
+const BasicLayout = ({ children }) => {
   const [collapsed, setcollapsed] = useState(false);
 
   const toggle = () => {
@@ -23,19 +24,22 @@ const BasicLayout = () => {
         collapsible
         collapsed={collapsed}
         className="site-layout-background"
+        theme="light"
       >
-        <div className="logo" />
         <Menu
           mode="inline"
           defaultSelectedKeys={['1']}
-          style={{ height: '100%', borderRight: 0 }}
+          className="menu-container"
         >
           <Menu.Item icon={<ContainerOutlined />} key="1">
             Dashboard
           </Menu.Item>
 
           <SubMenu key="sub1" icon={<LaptopOutlined />} title="Dispositivi">
-            <Menu.Item key="2">Tutti i dispositivi</Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/alldevices">Tutti i dispositivi</Link>
+            </Menu.Item>
+
             <Menu.Item key="3">Sensor Controller</Menu.Item>
           </SubMenu>
         </Menu>
@@ -50,15 +54,8 @@ const BasicLayout = () => {
             },
           )}
         </Header>
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-          }}
-        >
-          Content
+        <Content className="site-layout-background c-content">
+          {children}
         </Content>
       </Layout>
     </Layout>
