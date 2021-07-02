@@ -1,0 +1,53 @@
+//////////////////////////
+// Typography Mixins    //
+//////////////////////////
+
+@mixin h1 {
+  font-size: 45px;
+  @include bp-sm {
+    font-size: 58px;
+  }
+  @include bp-md {
+    font-size: 75px;
+  }
+}
+
+@mixin h2 {
+  font-size: 38px;
+
+  @include bp-md {
+    font-size: 40px;
+  }
+}
+
+@mixin h3 {
+  font-size: 20px;
+
+  @include bp-md {
+    font-size: 24px;
+  }
+}
+
+@mixin h4 {
+  font-size: 21px;
+
+  @include bp-md {
+    font-size: 21px;
+  }
+}
+
+@mixin h5 {
+  font-size: 20px;
+
+  @include bp-md {
+    font-size: 24px;
+  }
+}
+
+@mixin h6 {
+  font-size: 16px;
+
+  @include bp-md {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,222 @@
+//////////////////////////////////////////////////
+//                                              //
+// Button Mixin Module		                      //
+//                                              //
+//                                              //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+//$l-btn-height: 45px;
+$l-btn-padding: 15px 22px 14px;
+$l-btn-padding_plus_one: 16px 22px 15px;
+$l-btn-min-width: 150px;
+$l-btn-border-width: 2px;
+$l-btn-border-radius: 0px;
+$l-btn-font-size: 16px;
+$l-btn-shadow-base: inherit;
+$l-btn-font-weight: 500;
+$l-btn-line-height: 1;
+$l-btn-letter-spacing: 0px;
+$l-btn-trans: all 0.3s ease-in-out;
+$l-btn-trans-only: transform 0.3s ease-in-out;
+////////////////////
+// Styling        //
+////////////////////
+@mixin btn {
+  background-color: $g-grey-medium;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: $g-font-base;
+  font-size: $l-btn-font-size;
+  font-weight: $l-btn-font-weight;
+  letter-spacing: $l-btn-letter-spacing;
+  white-space: nowrap;
+  color: #fff;
+  border: $l-btn-border-width solid transparent;
+  text-decoration: none;
+  text-align: center;
+  text-transform: inherit;
+  transition: $l-btn-trans;
+  line-height: $l-btn-line-height;
+  min-width: $l-btn-min-width;
+  position: relative;
+  cursor: pointer;
+  padding: $l-btn-padding;
+  border-radius: $l-btn-border-radius;
+  &:focus {
+    outline: none;
+  }
+  .arrow-svg {
+    transition: $l-btn-trans;
+  }
+  svg {
+    margin-left: 9px;
+    top: 1px;
+    position: relative;
+    transition: $l-btn-trans-only;
+  }
+}
+
+@mixin btn-small {
+  font-size: 13px;
+  padding: 12px 20px;
+}
+
+@mixin btn-primary {
+  background-color: $g-brand-color-1;
+  color: #fff;
+  border: 0px;
+  padding: $l-btn-padding_plus_one;
+  @include sweep-to-top;
+  .arrow-svg {
+    fill: #fff;
+  }
+  &:before {
+    background-color: $g-brand-color-2;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $g-brand-color-1;
+    color: #000;
+  }
+}
+
+@mixin btn-secondary {
+  background-color: $g-brand-color-3;
+  color: #fff;
+  border: 0px;
+  @include sweep-to-top;
+  padding: $l-btn-padding_plus_one;
+  &:before {
+    background-color: $g-brand-color-1;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $g-brand-color-3;
+    color: #fff;
+  }
+}
+
+@mixin btn-tertiary {
+  background-color: #fff;
+  color: #000;
+  border: 0px;
+  @include sweep-to-top;
+  padding: $l-btn-padding_plus_one;
+  &:before {
+    background-color: $g-brand-color-1;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: #fff;
+    color: #fff;
+  }
+}
+
+@mixin btn-tertiary-dark {
+  background-color: #454545;
+  color: #fff;
+  border: 0px;
+  @include sweep-to-top;
+  padding: $l-btn-padding_plus_one;
+  &:before {
+    background-color: $g-brand-color-1;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: #fff;
+    color: #fff;
+  }
+}
+
+@mixin btn-open-primary {
+  background-color: transparent;
+  border: 2px solid $g-brand-color-1;
+  color: $g-brand-color-1;
+  @include sweep-to-top;
+  &:before {
+    background-color: $g-brand-color-1;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+@mixin btn-open-secondary {
+  background-color: transparent;
+  border: 2px solid $g-brand-color-2;
+  color: $g-brand-color-2;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $g-brand-color-2;
+    color: #fff;
+  }
+}
+
+@mixin btn-open-tertiary {
+  background-color: transparent;
+  border: 2px solid rgba(#fff, 0.5);
+  color: #fff;
+  transition: $g-trans-base !important;
+  @include sweep-to-top;
+  &:before {
+    background-color: #fff;
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #000;
+  }
+}
+
+@mixin btn-arrow {
+  $size: 60px;
+  cursor: pointer;
+  width: $size;
+  height: $size;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 10;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+  pointer-events: auto;
+}
+
+@mixin btn-arrow-primary {
+  background-color: $g-brand-color-2;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $g-brand-color-1;
+    color: #fff;
+  }
+}
+
+@mixin btn-arrow-tertiary {
+  background-color: #fff;
+  color: $g-brand-color-2;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $g-brand-color-1;
+    color: #fff;
+  }
+}
