@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 
 const columns = [
@@ -16,6 +16,8 @@ const columns = [
       { text: 'Connected', value: 'Connected' },
     ],
     width: '20%',
+    onFilter: (value: any, record: any) =>
+      record.connectionState.indexOf(value) === 0,
   },
   {
     title: 'Status',
@@ -33,6 +35,34 @@ const columns = [
   },
 ];
 
-export const TableComponent = ({ data }) => {
+type deviceType = {
+  data: {
+    deviceId: string;
+    status: string;
+    lastActivityTime: string;
+    region: null;
+    plant: null;
+    connectionState: string;
+    customer: null;
+  }[];
+};
+
+export const TableComponent = ({ data }: deviceType) => {
+  const [devices, setDevices] = useState([
+    {
+      deviceId: '',
+      status: '',
+      lastActivityTime: '',
+      region: null,
+      plant: null,
+      connectionState: '',
+      customer: null,
+    },
+  ]);
+
+  useEffect(() => {
+    setDevices(data);
+  }, []);
+
   return <Table columns={columns} dataSource={data} />;
 };

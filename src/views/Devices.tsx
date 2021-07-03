@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Loader } from '../components/Loader';
-import Table from '../components/Table';
+import { TableComponent as Table } from '../components/Table';
 
 //APIS
 import { getDevices } from '../services/devices';
 
-export const Devices = () => {
-  const [devices, setDevices] = useState({});
+type deviceType = {
+  deviceId: string;
+  status: string;
+  lastActivityTime: string;
+  region: null;
+  plant: null;
+  connectionState: string;
+  customer: null;
+}[];
 
-  const getDevicesPromise = () => {
+export const Devices = () => {
+  const [devices, setDevices] = useState<deviceType>([]);
+  const [loading, setLoading] = useState(false);
+
+  const getDevicesPromise = (): Promise<deviceType> => {
     return new Promise((resolve, reject) => {
       getDevices(resolve, reject);
     });
@@ -16,10 +27,15 @@ export const Devices = () => {
 
   useEffect(() => {
     const getAllDevices = async () => {
-      console.log(await getDevicesPromise());
+      setLoading(true);
+      const dev: deviceType = await getDevicesPromise();
+      setDevices(dev);
+      setLoading(false);
     };
     getAllDevices();
   }, []);
 
-  return <h2>Devices</h2>;
+  if (loading) return <Loader />;
+
+  return <Table data={devices} />;
 };

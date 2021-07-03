@@ -11,7 +11,11 @@ import { Link } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
-const BasicLayout = ({ children }) => {
+type Props = {
+  children?: JSX.Element;
+};
+
+const BasicLayout = ({ children }: Props) => {
   const [collapsed, setcollapsed] = useState(false);
 
   const toggle = () => {
@@ -31,16 +35,11 @@ const BasicLayout = ({ children }) => {
           defaultSelectedKeys={['1']}
           className="menu-container"
         >
-          <Menu.Item icon={<ContainerOutlined />} key="1">
-            Dashboard
-          </Menu.Item>
-
           <SubMenu key="sub1" icon={<LaptopOutlined />} title="Dispositivi">
-            <Menu.Item key="2">
+            <Menu.Item key="1">
               <Link to="/alldevices">Tutti i dispositivi</Link>
             </Menu.Item>
-
-            <Menu.Item key="3">Sensor Controller</Menu.Item>
+            <Menu.Item key="2">Sensor Controller</Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
