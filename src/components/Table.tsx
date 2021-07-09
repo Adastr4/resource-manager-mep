@@ -7,6 +7,7 @@ const columns = [
     dataIndex: 'deviceId',
     sorter: true,
     width: '30%',
+    render: (text: any, record: any) => <a>{record.deviceId}</a>,
   },
   {
     title: 'Stato del dispositivo',

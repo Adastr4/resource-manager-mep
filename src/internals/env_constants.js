@@ -1,3 +1,3 @@
 export default {
-  apiUrl: 'https://mepresourcemanager.azurewebsites.net/api',
+  apiUrl: 'https://apim-resource-manager.azure-api.net/v1',
 };

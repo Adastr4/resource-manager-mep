@@ -2,7 +2,7 @@ import { notification } from 'antd';
 import { getRequest } from './verb.services';
 
 export const getDevices = (resolve, reject) => {
-  return getRequest(`Resource`, null, false)
+  return getRequest(``, null, false)
     .then(({ data, status }) => {
       if (status === 200) {
         console.log(data);
