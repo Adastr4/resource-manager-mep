@@ -54,16 +54,16 @@ export const ManageDevice = () => {
       <Menu deviceID={params.deviceId} />
       <Descriptions bordered>
         <Descriptions.Item label="Region" span={2}>
-          {twinDevice.location.region}
+          {twinDevice?.location.region}
         </Descriptions.Item>
         <Descriptions.Item label="Plant" span={1}>
-          {twinDevice.location.plant}
+          {twinDevice?.location.plant}
         </Descriptions.Item>
         <Descriptions.Item label="Code" span={2}>
-          {twinDevice.customer.code}
+          {twinDevice?.customer.code}
         </Descriptions.Item>
         <Descriptions.Item label="RagSoc" span={1}>
-          {twinDevice.customer.ragSoc}
+          {twinDevice?.customer.ragSoc}
         </Descriptions.Item>
       </Descriptions>
     </>
