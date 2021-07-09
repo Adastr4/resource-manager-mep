@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Table } from 'antd';
 
 const columns = [
@@ -7,7 +8,9 @@ const columns = [
     dataIndex: 'deviceId',
     sorter: true,
     width: '30%',
-    render: (text: any, record: any) => <a>{record.deviceId}</a>,
+    render: (text: any, record: any) => (
+      <Link to={'device/' + record.deviceId}>{record.deviceId}</Link>
+    ),
   },
   {
     title: 'Stato del dispositivo',
