@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Devices } from '../views/Devices';
 import { AboutDevice } from '../views/DeviceDetails/AboutDevice';
 import Layout from './Layout';
+import { ManageDevice } from '../views/DeviceDetails/ManageDevice';
 
 const Main = () => {
   return (
@@ -15,7 +16,7 @@ const Main = () => {
             <Route
               exact
               path="/device/:deviceId/manage"
-              component={AboutDevice}
+              component={ManageDevice}
             />
             <Route
               exact
