@@ -41,7 +41,6 @@ export const ManageDevice = () => {
       setLoading(true);
       const dev: twinDeviceType = await getTwinDevicesPromise();
       setTwinDevices(dev);
-      console.log(dev);
       setLoading(false);
     };
     getTwinDevices();
