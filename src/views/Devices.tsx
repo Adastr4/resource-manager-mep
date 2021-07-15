@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Loader } from '../components/Loader';
 import { TableComponent as Table } from '../components/Table';
+import { Breadcrumb } from 'antd';
 
 //APIS
 import { getDevices } from '../services/devices';
@@ -37,5 +38,15 @@ export const Devices = () => {
 
   if (loading) return <Loader />;
 
-  return <Table data={devices} />;
+  return (
+    <>
+      <Breadcrumb>
+        <Breadcrumb.Item>
+          <a href="">Dispositivi</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>Tutti i Dispositivi</Breadcrumb.Item>
+      </Breadcrumb>
+      <Table data={devices} />
+    </>
+  );
 };
