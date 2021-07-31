@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { DeviceMenu as Menu } from '../../components/DeviceMenu';
 import { Breadcrumb } from 'antd';
 
@@ -14,11 +14,10 @@ export const AboutDevice = () => {
       <Breadcrumb>
         <Breadcrumb.Item>Dispositivi</Breadcrumb.Item>
         <Breadcrumb.Item>
-          <a href="/alldevices">Tutti i Dispositivi</a>
+          <Link to="/alldevices">Tutti i Dispositivi</Link>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <a href="">{params.deviceId}</a>
-        </Breadcrumb.Item>
+        <Breadcrumb.Item>{params.deviceId}</Breadcrumb.Item>
+        <Breadcrumb.Item>About</Breadcrumb.Item>
       </Breadcrumb>
       <Menu deviceID={params.deviceId} />
       <h4>Nothing to show in About page</h4>

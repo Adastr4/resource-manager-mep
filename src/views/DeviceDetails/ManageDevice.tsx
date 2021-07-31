@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { DeviceMenu as Menu } from '../../components/DeviceMenu';
 import { Loader } from '../../components/Loader';
 import { getTwinDevices } from '../../services/devices';
-import { Descriptions } from 'antd';
+import { Descriptions, Breadcrumb } from 'antd';
 
 export const ManageDevice = () => {
   type paramsType = {
@@ -50,6 +50,14 @@ export const ManageDevice = () => {
 
   return (
     <>
+      <Breadcrumb>
+        <Breadcrumb.Item>Dispositivi</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Link to="/alldevices">Tutti i Dispositivi</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>{params.deviceId}</Breadcrumb.Item>
+        <Breadcrumb.Item>ManageDevice</Breadcrumb.Item>
+      </Breadcrumb>
       <Menu deviceID={params.deviceId} />
       <Descriptions bordered>
         <Descriptions.Item label="Region" span={2}>
