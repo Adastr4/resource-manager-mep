@@ -42,6 +42,20 @@ const BasicLayout = ({ children }: Props) => {
             <Menu.Item key="2">Sensor Controller</Menu.Item>
           </SubMenu>
         </Menu>
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={['1']}
+          className="menu-container"
+        >
+          <SubMenu key="sub1" icon={<LaptopOutlined />} title="Administrator">
+            <Menu.Item key="1">
+              <Link to="/registeruser">Create User</Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/registerdevice">Register Device</Link>
+            </Menu.Item>
+          </SubMenu>
+        </Menu>
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
