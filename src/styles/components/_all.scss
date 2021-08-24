@@ -69,6 +69,19 @@
   cursor: pointer;
 }
 
+#redirect_gucamole {
+  background-color: #1890ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 #chart1 {width: 100%; height: 650px;}
 #chart2 {width: 50%; height: 400px; float: left;}
 #chart3 {width: 50%; height: 400px; float: left;}
